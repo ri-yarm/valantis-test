@@ -18,6 +18,10 @@ function App() {
 
   return (
     <ContainerSC>
+      <a href={"https://t.me/ri_yarm"} target={"_blank"}>
+        телеграмм
+      </a>
+
       <h1>Поиск Ювелирных изделий</h1>
 
       <Filter setSearch={setSearch} />

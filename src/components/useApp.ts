@@ -13,8 +13,6 @@ export const useApp = () => {
     inputValue: string;
   }>({ filterValue: "none", inputValue: "" });
 
-  console.log(page);
-
   const handleChangePage = (page: number) => {
     setPage(page);
   };
