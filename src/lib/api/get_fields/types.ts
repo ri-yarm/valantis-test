@@ -1,7 +1,6 @@
 import { MFFields } from "lib/models";
 
 export type GetFieldsArg = {
-  signal: AbortSignal;
   params?: GetFieldsTRequest;
 };
 
@@ -14,3 +13,7 @@ export type GetFieldsTRequest = {
 export type GetFieldsResponse = {
   result: (string | number | null)[];
 };
+
+export interface GetFieldReq extends GetFieldsArg {
+  action: "get_fields";
+}

@@ -9,3 +9,7 @@ export type GetIdsResponse = {
 export type GetIdsArgs = {
   params?: GetIdsRequest;
 };
+
+export interface GetIdsReq extends GetIdsArgs {
+  action: "get_ids";
+}

@@ -1,15 +1,22 @@
 import { axiosProject } from "lib/http";
-import { GetFieldsArg } from "lib/api/get_fields/types.ts";
+import {
+  GetFieldReq,
+  GetFieldsArg,
+  GetFieldsResponse,
+} from "lib/api/get_fields/types.ts";
+import { AxiosResponse } from "axios";
 
-export const get_fields = ({ params }: GetFieldsArg) => {
-  const data = JSON.stringify({
+export const get_fields = ({
+  params,
+}: GetFieldsArg): Promise<AxiosResponse<GetFieldsResponse>> => {
+  const data: GetFieldReq = {
     action: "get_fields",
     params: {
       field: params?.field,
       limit: params?.limit,
       offset: params?.offset,
     },
-  });
+  };
 
-  return axiosProject.post("", data);
+  return axiosProject.postWithRetry("", data);
 };

@@ -1,4 +1,4 @@
-import { PASSWORD } from "../../constants";
+import { PASSWORD } from "../constants";
 import md5 from "md5";
 
 export const setAuthHeaders = () => {
