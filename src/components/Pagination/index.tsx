@@ -17,7 +17,7 @@ const Pagination = ({ total, loading, onPageClick }: PaginationProps) => {
       ) : (
         <ReactPaginate
           nextLabel="next >"
-          onPageChange={({ selected }) => onPageClick(selected)}
+          onPageChange={({ selected }) => onPageClick(selected + 1)}
           pageRangeDisplayed={3}
           marginPagesDisplayed={2}
           pageCount={(total as number) / ADS_PER_PAGE}

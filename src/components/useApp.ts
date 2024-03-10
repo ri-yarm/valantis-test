@@ -13,8 +13,9 @@ export const useApp = () => {
     inputValue: string;
   }>({ filterValue: "none", inputValue: "" });
 
+  console.log(page);
+
   const handleChangePage = (page: number) => {
-    console.log(page);
     setPage(page);
   };
 
@@ -54,7 +55,7 @@ export const useApp = () => {
       try {
         if (!ids) return null;
 
-        const offset = (page - 1) * ADS_PER_PAGE;
+        const offset = page * ADS_PER_PAGE;
         const response = await get_items({
           params: {
             ids: ids.slice(offset, ADS_PER_PAGE + offset),
